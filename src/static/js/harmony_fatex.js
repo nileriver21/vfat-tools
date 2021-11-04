@@ -649,7 +649,25 @@ $(function() {
     
 async function getFatePoolInfo(app, chefContract, chefAddress, poolIndex, pendingRewardsFunction) {
   const poolInfo = await chefContract.poolInfo(poolIndex);
-  if (poolInfo.allocPoint == 0) {
+  if (poolInfo.allocPoint == 0 ||
+      poolInfo.lpToken == "0xD54392c1877bD796a96287632097e27d2164C13C" ||
+      poolInfo.lpToken == "0x8EcaFea764237D239d7FCC3A90f1cf0C95cC9A1f" ||
+      poolInfo.lpToken == "0xef1a47106b5B1eb839a2995fb29Fa5a7Ff37Be27" ||
+      poolInfo.lpToken == "0x3D47459DCDB128Cff8456E9449C25A453512a746" ||
+      poolInfo.lpToken == "0x9e9A486D2693b679ec8C59297856E0A2C85424ea" ||
+      poolInfo.lpToken == "0x39b447AFb84F575367dA197D9487894001158611" ||
+      poolInfo.lpToken == "0x44D9cd4eF862748Cd232f2F9B3149087377b90f4" ||
+      poolInfo.lpToken == "0x11d454FD381584565437Ead90aDF3ba4B5eb8a43" ||
+      poolInfo.lpToken == "0xD296DC7430a3a1D1Ecc5013bb97d8962648062a1" ||
+      poolInfo.lpToken == "0x6bb92D703CD4c684E97daE564983334F17D7ceF4" ||
+      poolInfo.lpToken == "0xe468B8EdB7bC5a6aA882f3b6E30fbc9402F72e34" ||
+      poolInfo.lpToken == "0x99Bbe54AA852B62174F74cAaC1195Dc1DC722003" ||
+      poolInfo.lpToken == "0x13aE2feEcF414Aba9f3c6EE815bCe44F06aE52B1" ||
+      poolInfo.lpToken == "0x3789eF4dD516CEF0cC126a5242449515da432270" ||
+      poolInfo.lpToken == "0xd1b4b14692d50421E48caE7f8a8f95Ffa6a1D17F" ||
+      poolInfo.lpToken == "0xa1C78b5b383af84ce6a85b5Ed2354f843f117Dd4" ||
+      poolInfo.lpToken == "0x2614687bdb30b761fbfCe2B0f386BD85B073E77a" ||
+      poolInfo.lpToken == "0xB85e0Acd92f0A654650CC8954A1541B0E58FCD1a"){
     return {
       address: poolInfo.lpToken,
       allocPoints: poolInfo.allocPoint ?? 1,

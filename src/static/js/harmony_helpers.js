@@ -181,7 +181,6 @@ async function getHarmonyToken(App, tokenAddress, stakingAddress) {
       return erc20tok;
     }
     catch(err) {
-      console.log(err);
       console.log(`Couldn't match ${tokenAddress} to any known token type.`);
     }
   }
